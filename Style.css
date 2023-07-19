@@ -1,0 +1,86 @@
+html {
+  height: 100%;
+  width: 100%;
+}
+body{
+  background-color: #000000 ;
+}
+
+#sidebar {
+  overflow: auto ;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  height: 100% ;
+  width: 15% ;
+  background-color: #5B8FB9;
+  border: 1px solid #FFFFFF
+}
+
+.sidebarTitle {
+  font-size: 4vw ;
+  color: #FFFFFF ;
+}
+.sidebarLink{
+  font-size: 3vw ;
+}
+#header {
+  position: absolute ;
+  top : 0px ;
+  background-image:linear-gradient(to bottom right, #301E67 , #5B8FB9);
+  height: 200px;
+  width: 85% ;
+  font-family: 'Times New Roman', Times, serif ;
+  border: 1px solid #FFFFFF ;
+  margin-left: 15% ;
+  
+  
+}
+#mainContent {
+  position: absolute ;
+  background-color: #301E67 ;
+  top : 210px ;
+  height: 2000px;
+  width: 75% ;
+  font-family: 'Times New Roman', Times, serif ;
+  border: 1px solid #FFFFFF ;
+  margin-left: 20% ;
+}
+
+h1{
+  font-family: 'Times New Roman', Times, serif ;
+  font-size: 30px ;
+  color: #FFFFFF ;
+  text-decoration: underline ;
+  text-align: center ;
+}
+h2{
+  font-family: 'Times New Roman', Times, serif ;
+  font-size: 25px ;
+  color: #FFFFFF ;
+  text-decoration: underline ;
+  text-align: center ;
+}
+h3{
+  font-family: 'Times New Roman', Times, serif ;
+  font-size: 15px ;
+  color: #FFFFFF ;
+  text-decoration: underline ;
+  text-align: center ;
+}
+p{
+  font-family: 'Times New Roman', Times, serif ;
+  margin-left: 15px ;
+  color: #FFFFFF;
+  
+}
+ul{
+  font-family: 'Times New Roman', Times, serif ;
+	
+	font-size: 15px;
+	color: #FFFFFF;
+}
+a{
+  color: #FFFFFF ;
+}
