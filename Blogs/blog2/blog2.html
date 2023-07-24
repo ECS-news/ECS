@@ -1,1 +1,155 @@
+<!DOCTYPE html>
+<html>
 
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>ECS-home</title>
+  <link href="blog2Style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <h1 id = "header"> Javascript basics</h1>
+
+  <div id = "article"> 
+    <div id = "text">
+      <p> Today I wanted to talk about javascript and all the different ways in which the language can be used in general. This blog will go into detail on the basics of javascript and its syntax. This blog will  assume you have some coding knowledge such as this not being the first programming language you have learnt before. 
+
+ </p>
+      <h2> What is javascript used for?</h2>
+
+      <p> Javascript is used for web based applications but can be used standalone. Javascript can control and change different attributes and properties of HTML elements via referencing elements on a web page such as through their ID. Below will be a series of javascript basics followed by javascript specific keywords and concepts. </p>
+      <h3> How to run javascript on web pages</h3>
+      <p> This can be done by either writing the javascript in a &ltscript&gt tag in the HTML file or by creating a separate javascript file and linking them by this line of code in the body of the html file. </p>
+    
+      <p class = "code">  &ltscript src="(filename.js)"&gt &lt/script&gt </p>
+
+      <h2> Variables </h2>
+      <p> Variables don’t need to be declared with a type like int or str but you do need to specify what “kind” of variable you are defining: </p>
+
+      <p class = "code"> let (variable name) = (contents) ; <br> var (variable name)= (contents); <br> const (variable name) = (contents) ; </p>
+      <p> “Const” creates a fixed value known as a literal. Neither the name or the contents can be altered after declaring a constant. </p>
+      <p> “Let” and “var” create variables and ,as a result, can be assigned different values as the programme is running. The difference between “let” and “var” is from the scope in which they are defined. “Let” defines the variable in the current block and can only be used within that block. For example, if a variable was defined using “let” in an “if statement”, the variable could not be referenced outside the”if statement” as the variable would not be defined for that scope of the program. “Var” has a larger scope but not global scope. “Var” defined variables can be used throughout an entire subroutine of the program of where they are defined. If declared in main, they can be used throughout the entirety of main but not in subroutines. Note:  the value can be used in subroutines by passing it as a parameter. Similarly, if they are  declared in a subroutine, they can be referenced throughout the entire subroutine but not in the main program. Again, You can get around this by using a function and a return statement to pass the value to main. </p>
+      
+      <h3> Strings </h3>
+      <p> Strings are defined using either “” or ‘’ or ``. There isn’t a difference between using the different ways of defining strings however, for ease of use I’d recommend using one type of way of defining them in order to make the code easier to read and understand
+which therefore also makes it more maintainable. </p>
+      <p class = "code"> var string = “Hello World” ; <br> var string = ‘Hello World‘ ; <br> var string = `Hello World` ;</p>
+      <p> Note: the character data structure doesn’t exist in javascript. Characters will just be defined as strings of length one. </p>
+      <ul>
+        <li> string.length () - returns the length of the string </li>
+        <li> string .substring(start,end) - returns substring between indexes start and end </li>
+        <li> <a href = "https://www.w3schools.com/jS/js_string_methods.asp"> see more at W3schools </a> </li>
+      </ul>
+      
+      <h3> Arrays </h3>
+      <p> arrays are defined as shown below </p>
+
+      <p class = "code"> const (arrayName)  = [element1, element2 , element3…] ; </p>
+      <ul>
+        <li> Arrays can have different variable types inside them such as other arrays and objects </li>
+        <li> Arrays are passed by reference </li>
+        <li>  Arrays are indexed at 0 and so each element can be accessed via  <p class = "code">array[index] </p> </li>
+        <li> array.length() - returns the number of elements in the array </li>
+        <li> arrayName.sort() - sorts the array </li>
+      </ul>
+
+      <h3> Other </h3>
+
+      <p class = "code" var num = 5 ; <br> var decimal = 5.5 ; <br> var decision = true ;  <br> var decision = false ; </p>
+      <p> In terms of good variable names for javascript, developers tend to use either underscores to distinguish between different words in a variable name or they utilise lower camel case whereby the variable name is in all lowercase except for the first letter of words excluding the first letter e.g variableName. </p>
+      <p> Note: you cannot use hyphens in variable names as the hyphen symbol is reserved for subtraction. </p>
+      <h3> Operations </h3>
+      
+      <ul>
+        <li> (+) adding numbers or concatenating strings </li>
+        <li>(-) subtracting numbers</li>
+        <li> (*) multiplication </li>
+        <li> (/) Division </li>
+        <li> (%) Modulus division </li>
+        <li> No symbol for integer division </li>
+        <li> (**) exponents </li>
+      </ul>
+      
+      <h3> Selection </h3>
+      
+      <ul>
+        <li> (<) is less than </li>
+        <li> (>)  is greater than </li>
+        <li> (*) multiplication </li>
+        <li> (!) Not </li>
+        <li> (==) is equal to </li>
+        <li> (>=) is greater than or equal to </li>
+        <li>(<=) is less than or equal to </li>
+        <li> (!=) not equal to</li>
+      </ul>
+
+      <h3> if statements</h3>
+      
+      <p class = "code"> if ((statement1)) { <br> &nbsp; // code for if statement1 is true <br>} <br> else if ((statement2)) {<br>  &nbsp;// code block for if statement 1 is false but statement 2 is true <br>}<br> <br> else if ((statement3)) {<br>  &nbsp;// code block for if statement 1 is false and statement 2 is false but statement 3 is true<br>} <br> &nbsp; &nbsp; …<br>  &nbsp; &nbsp; …<br> &nbsp; &nbsp; …<br>else { <br> &nbsp; //code block for if all statements before this were false<br> }</p>
+      
+      <h4> Example </h4>
+      <p class = "code"> var grade = 2 ; <br><br>if (grade == 3) {<br> &nbsp; &nbsp; console.log("Well done! Great Score!") ;<br>}<br> else if (grade == 2) {<br> &nbsp; &nbsp; console.log("Well done! You Passed!") ;<br>}<br>else {<br> &nbsp; &nbsp; console.log ("You failed! Better luck next time") ;<br>}</p>
+      <h4> Output </h4>
+      
+      <p class = "code"> Well done! You passed </p>
+      
+      <h3> Switch case statements </h3>
+      <p class = "code">switch(expression) { <br>  &nbsp; case x :<br>  &nbsp;  &nbsp; break; <br>  &nbsp;  &nbsp; // code block for if expression = x is true <br>  &nbsp; case y :<br>  &nbsp;  &nbsp; break; <br>  &nbsp;  &nbsp; // code block for if expression = x is false but expression = y is true <br>  &nbsp; case z :<br>  &nbsp;  &nbsp; break ; <br>  &nbsp;  &nbsp; // code block for if expression = x is false and expression = y is false but expression = z is true<br>  &nbsp;  &nbsp; …  <br>  &nbsp;  &nbsp; … <br>  &nbsp;  &nbsp; … <br> <br> &nbsp; default ; <br>  &nbsp; &nbsp; //codefor if all statements before this were false <br>} </p>
+      
+      <h4> Example: </h4>
+      <p class = "code">var grade = 1 ;<br>switch(grade) { <br>  &nbsp; case 3 :<br>  &nbsp;  &nbsp; break; <br>  &nbsp;  &nbsp; console.log("Well done! Great Score!") ; <br>  &nbsp; case 2 :<br>  &nbsp;  &nbsp; break; <br>  &nbsp;  &nbsp; console.log("Well done! You Passed!") ;<br>  &nbsp; default ; <br>  &nbsp; &nbsp; console.log ("You failed! Better luck next time") ; <br>} </p>
+      
+      <h4> Output </h4>
+      <p class = "code"> You failed! Better luck next time</p>
+      <h2> Loops:</h2>
+      <h3> Count controlled loops: </h3>
+      <h4> For Loop Syntax:</h4>
+      <p class = "code"> for (let i = 0 ; (statement) ; (assignment) {<br> &nbsp; &nbsp; //code block that is run if when i is updated by the assignment the statement is still true <br>} </p>
+      
+      <h4> Example </h4>
+      <p class = "code"> for (let i = 0 ; i<10 ; i++) {<br> &nbsp; &nbsp; console.log(i); <br>} </p>
+      <h4> Output </h4>
+      <p class = "code"> 0<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9</p>
+      <p> You can also have “for loops” that iterate over arrays to display their contents using the "in" keyword. </p>
+      <p class = "code"> const num =  [5,6,7,4,3,6] ; <br> for (let num in numbers) {<br> &nbsp; console.log(num) ;<br> } </p>
+      <h4> Output </h4>
+      <p class = "code"> 5<br>6<br>7<br>4<br>3<br>6 </p>
+
+      <h3> Condition controlled loop: </h3>
+      <h4> While loops Syntax: </h4>
+
+      <p class = "code" > while (statement) { <br> &nbsp; // code block for if the statement continues to be true after each iteration <br> }</p>
+       <h4> Example </h4>
+      <p class = "code"> var num  = 100 <br>while(num != 1) { // 3x+1 conjecture <br> &nbsp; if (num % 2 == 0) { <br> &nbsp; &nbsp; num = num/2 ; <br> &nbsp; &nbsp; console.log(num) ; <br> &nbsp;} <br> &nbsp; else { <br>  &nbsp; &nbsp; num = 3 * num + 1 ;<br> &nbsp; &nbsp; console.log(num) ; <br> &nbsp;} <br>} </p>
+      <h4> Output </h4>
+      <p class = "code"> 12<br>6<br>3<br>10<br>5<br>16<br>8<br>4<br>2<br>1</p>
+      <p> You can also have a do while loop which will always iterate once before checking if the statement is true or not. This allows you to make sure the nested code block is run at least once. You can do this by replacing the while with do and moving the while statement to the line starting with } and ending the loop with a ;</p>
+      <h2> Subroutines </h2>
+      <p> All functions in javascript are methods of an object. If this isn’t specified like in the examples below, the function is a method of the global object window but the window can be omitted when the methods are called.
+</p>
+      <h3> Syntax </h3>
+
+      <p class = "code"> function (subroutineName) (parameter(s)) { <br> // code block to be run when the function is called <br> } <br> subroutine(arguments(s)) </p>
+      <p> If the subroutine is defined as a function then it must return a value or series of values to the main program using the return keyword.You can also create anonymous functions which don’t have a name like this:</p>
+      <p class ="code">const (variableName) = function(parameter(s)) {return: val } ; </p>
+      <h3> Self-invoking </h3>
+      <p> Note: If you add () after the contents of the function expression, when you declare the function, it will also call the function</p>
+      <p class ="code"> let x = function (a,b) {return a * b} (6,5) ; <br> console.log(x) // outputs 30; </p>
+      <h3> Arrow functions </h3>
+      <p> Arrow functions allow a short-form way of writing function expressions</p>
+      <p class = "code"> Const variableName = (parameter(s)) => {return: val} ; </p>
+      <p> Note: The return and {} can be omitted from arrow functions if the function is only one statement. </p>
+      <p> That finishes it up for today in terms of the basics for javascript. Stay tuned as soon we will be doing an advanced javascript blog about classes, objects and linking javascript to webpages. </p>
+      <p class = "author"> - Rhys Bonwick 24/07/23</p>
+      
+      
+
+
+
+
+
+      
+    </div>
+  </div>
+</body>
