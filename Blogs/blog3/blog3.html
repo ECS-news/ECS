@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>ECS-home</title>
+  <link href="blog3Style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <h1 id = "header"> JavaScript POP - Advanced </h1>
+  <div id = "article"> 
+    <div class = "text">
+      <p> Javascript is heavily an object-oriented programming language, more specifically a prototypal object oriented programming language (POP) which utilises constructors and prototypes to instantiate objects and benefit from inheritance. </p>
+    <h2> ES6 </h2>
+    <p> Important to note that javascript is not a class based language. ES6 is deceiving and makes javascript look like a class based standard OOP language like java but rather ES6 just introduced ‘syntaxical sugar” to make code more readable. Javascript is a prototypal object based language and should be treated that way. </p>
+    <p> ES6 was an update to javascript in 2015 which introduced the class keyword. This acts very similar to regular classes but it’s not really a class and more just implementing prototypes and objects behind the scenes. Prototypes work differently than class inheritance and so rewriting prototypes in class form just confuses everything and leaves out important details that are vital to understanding how javascript works. This is why many developers and I choose to ignore ES6 classes to prevent confusion. More on prototypes later. </p>
+    <h2> Objects in javaScript </h2>
+    <p> Objects are simply well-defined variables that contain named values known as properties and object-specific functions known as methods </p>
+    <p> Excluding  primitive variables, most variables in javascript are objects. For example when you create a string and run methods on the string, you are calling (methods) functions stored in the String Object. Likewise you can access properties of strings like their length using dot notation and built-in properties. </p>
+    </div>
+    <div class = "image"> 
+      <img src = "images/objectMethods.png" alt = "objectMethods"/>
+    </div>
+    <div class = "text"> 
+      <p> There are also other types of variables that are objects such as functions and arrays.</p>
+      <h2> How to create an object </h2>
+      <p> We can create an object via defining its properties and methods as shown below. </p>
+    </div>
+    <div class = "image">
+      <img src = "images/CreateObject.png" alt = "Creating objects"/>
+    </div>
+    <div class = "text">
+      <p> Here we have created an object called person. Note: objects are typically defined as constants since they are passed by reference. This object has 2 properties which are defined by first creating a property name and then assigning that property name with a property value - This creates key :value pairs that can be referenced directly by their key.   Next we have created a method that can be run on the object by defining a function when declaring the object.</p>
+      <p> To access the properties and methods we use dot notation or square brackets as shown. Both achieve very similar results and dot notation is usually preferred however dot notation will not work on pointers to property names as shown below </p>
+    </div>
+    
+    <div class = "image">
+      <img src = "images/dotOR[].png" alt = "dot versus [] implementation"/>
+    </div>
+    
+    <div class = "text">
+      
+      <h2>The "this" keyword </h2>
+      <p> You might have noticed that the word “this” is used when declaring an object. “This” simply refers to the object that is being modified at that time. So in the example above “this” just refers to the current object that the method is being run on. This is useful as it allows you to have methods ,using object types, that change only the value of the property in the object that the method is being run on. This means that multiple objects of the same object type can use the methods and the methods will only affect that object. More on object types below.</p>
+      
+      <h2> Constructors</h2>
+      <p> Constructors are useful for having multiple objects of similar nature (type) with same property names but usually different property values. </p>
+      <p> Suppose we have the following code:</p>
+    </div>
+    <div class = "image">
+      <img src = "images/badOOP.png" , alt = "two objects that should be instances of an object type but aren't"/>
+    </div>
+    <div class = "text">
+      <p> We can see both of the objects share the exact same property names but different property values. The code above works but imagine if we wanted to have 20 different people. The above code would be really bulky and hard to maintain since if we wanted to add a new detail to each person object then we’d have to add 20 new lines to the code. What about if we wanted to add new methods for each of the objects? This is where constructors and prototypes come into play. </p>
+      <p> Constructors allow us to create objects with predefined properties and methods. </p>
+      <p> A better way of creating the same result as shown in the previous example would be by using a constructor like so: </p>
+    </div>
+    <div class = "image">
+      <img src = "images/goodOOP.png" alt = "using a constructor to create better code"/>
+    </div>
+    <div class = "text">
+      <p> Now if we want to add new methods to all existing objects of type person we can. We also can still add specific methods and properties to specific objects by directly creating new properties and methods: </p>
+    </div>
+    <div class = image>
+      <img src = "images/newMethods.png" alt = "Adding new methods to an object" />
+    </div>
+    <div class = "text">
+      <p> Constructors also hide what they are doing to an extent. When you call “new Person(....)” , the constructor returns an object and sets “this” to refer to the current object that is going to be returned. </p>
+      <h2> Prototypes </h2>
+      <p> Prototypes are the way in which Javascript OOP differs into POP. Prototypes are the way in which ,since classes don’t exist in javascript, you can get inheritance. Inheritance is the way in which objects can have access to other objects' methods and properties. A great example of this would be if you had a program with object types of professor and student. Both the professor and student would have properties in common like a name and age and potentially some methods too. To save having to write both name and age or the same method multiple times (once in each object type), you can create a prototype that can be the prototype of both of the student and professor types.Let me explain. </p>
+      <p> Every object has a prototype. If you were to create an object there will be a list of all of the different methods that the object has access to even though they aren't explicitly defined when the object was made by the programmer. Where did all of these methods come from?  You can try using the methods on your object and they will work. The ones inherited by default are from having the default prototype object.prototype which gives you access to the methods below: </p>
+      <p> __defineGetter__<br>__defineSetter__<br>__lookupGetter__<br>__lookupSetter__<br>__proto__<br>constructor<br>hasOwnProperty<br>isPrototypeOf<br>propertyIsEnumerable<br>toLocaleString<br>toString<br>valueOf </p>
+      <p> If you were to call one of the methods in the prototype the code would follow a series of steps leading to the method.</p>
+      <ol>
+        <li> The code searches for the method in the object the method is called on. </li>
+        <li> If found it runs the method , if not it checks if the method is in the prototype.</li>
+        <li>If found it runs the method, if not it checks the prototype of the prototype and so on. </li>
+        <li> If the prototype is null, then the code knows it has reached the end of the prototype chain and  knows the method doesn’t exist so returns undefined. </li>
+      </ol>
+
+      <h2> Shadowing properties </h2>
+      <p>  If a property in the prototype and the object itself has the same name what happens when we try to refer to it? Which one is prioritised? If we look back at the steps above, the code will run the method closest to the object’s method in a hierarchical fashion. So if both the prototype and the object have a method of the same name, the method in the object is called and the one in the prototype is ignored. This is known as shadowing properties. </p>
+      <p> Let’s go back to the student professor example and see how we can use prototypes there to make the code maintainable and more readable. </p>
+    </div>
+    <div class = "image">
+      <img src = "images/prototypes.png" alt = "prototypes"/>
+    </div>
+    <div class = "text">
+      <p> Above, we have used Object.assign() which takes an object’s prototype property name (in this case the default “objectType.prototype”) and an object you wish to assign to it and assigns it. This now means that all instances of Student and Professor can now access the methods in Person. </p>
+      <p>  It is common practice to have methods in the prototypes and properties in the original object constructor since usually different objects will have different property values but will want to run the same methods. </p>
+      <h2> Encapsulation </h2>
+      <p> Encapsulation in javascript is the idea that data is hidden and only the data that is necessary is accessible by the areas of that code that need it and nothing more.This is typically achieved by using the private and public keywords. These keywords don’t exist in javascript  - another reason why the class keyword in ES6 is deceiving - and so we have to implement private and public variables differently. </p>
+      <p> To achieve encapsulation in javascript you have to use the scope of variables to create private properties.
+      </p>
+    </div>
+    <div class = "image">
+      <img src = "images/setters.png" alt = "setters" />
+    </div>
+    <div class = "text">
+      <p> This code above shows how now we can set restrictions on any time we want to change the age property through the setter setAge()  in order to comply with encapsulation; however, you can still access the age attribute directly by using person.age which is a problem for encapsulation. We could also have created a get getAge() {} to display the age without having to access it directly. </p>
+      <p> To solve the issue of still being able to access age directly we need to change this.age into var age </p>
+    </div>
+
+    <div class = "image"> 
+      <img src = "images/privateProperties.png" alt = "using var age to create a private property"/>
+    </div>
+    <div class = "text">
+      <p> This change results in the age variable being private rather than public. This means that prototype methods cannot access age directly. </p>
+
+      <p id = "outro">That pretty much covers all OOP principles in which differ here due to prototypes and how to implement them.Now that we understand, javascript syntax and how Javascript is structured, we can see how it can be used to interact with websites.</p>
+      <p id = "author"> - Rhys Bonwick 25/07/2023</p>
+      
+      
+
+      
+      
+    
+    
+
+
+      
+  </div>
+</body>
+  
