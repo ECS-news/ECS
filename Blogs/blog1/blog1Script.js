@@ -2,6 +2,7 @@ function Python () {
   document.getElementById("python").style.display = "block";  
   document.getElementById("java").style.display = "none";  
   document.getElementById("javascript").style.display = "none";  
+  window.open() ;
   
 }
 function Java () {
