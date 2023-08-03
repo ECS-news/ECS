@@ -1,0 +1,144 @@
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>ECS-home</title>
+  <link href="blog4Style.css" rel="stylesheet" type="text/css" />
+</head>
+<script src="blog4Script.js"></script>
+<body>
+  <h1> Javascript: linking to HTML</h1>
+  <div id = "article">
+    <div class = "text">
+      <h2> Javascript DOMS</h2>
+      <p>  In order for javascript to be able to interact with HTML, a new file is created called a DOM which takes the existing HTML and converts it into a file in which javascript can interpret and use. This file replaces tags like </p><code>&lt;h1&gt; and &lt;p&gt;</code> <p> with objects that are more useful for javascript. The data is in this file can then be accessed using global objects in javascript which we will talk more about further down this blog.<br><br>The two most notable global objects are the window object and document object </p>
+
+
+      <h2> Window </h2>
+      <p> The</p> <code><var> window </var></code> <p>object is at the top the hierarchy for the website and represents the browser in which the webpage is opened. The</p> <code> window </code> <p>object is usually omitted when calling particular methods and also could be used before </p> <code><var> document </var></code> <p> when calling the methods of</p> <code><var> document </var></code> <p> - more on that later. </p>
+      <ul> 
+        <li> <code><var> window.innerWidth </var></code> -  returns the inner width of the browser (not including scrollbars and toolbars) </li>
+        <button type="button"> Inner Width:</button>
+        <p id = "innerWidth"> </p>
+        <br>
+        <li> <code><var> window.innerHeight </var></code> -  returns the inner height of the browser (not including scrollbars and toolbars) </li>
+        <button type="button"> Inner Height:</button>
+        <p id = "innerHeight"> </p>
+        <br>
+        <li> <code><var> window.outerWidth </var></code> - returns the entire width of the browser including scrollbars and toolbars.</li>
+        <button type="button"> Outer Width:</button>
+        <p id = "outerWidth"> </p>
+        <br>
+        <li> <code><var> window.outerHeight </var></code> - returns the entire height of the browser including scrollbars and toolbars </li>
+        <button type="button"> Outer Height:</button>
+        <p id = "outerHeight"> </p>
+        <br>
+        
+        <li> <code><var> window.alert() </var></code> - displays an alert box on the current window </li>
+        <button type="button" onclick="window.alert('Alert!')"> Alert!</button>
+        <br>
+        
+        <li> <code><var> window.confirm() </var></code> - displays a box asking for confirmation from the user. Boolean return based on user's response </li>
+        <button type="button" onclick="window.confirm('Confirm aboslutely nothing?')"> Confirm?</button>
+        <br>
+        
+        <li> <code><var> window.print() </var></code> - prints the contents to the current window. </li>
+        <button type="button" onclick="document.getElementById('date').innerHTML = new Date().getDate()"> print the number of the month!</button>
+        <p id = "date"> </p>
+        <br>
+        
+        <li> <code><var> window.prompt </var></code> - prompts the user for an input via a box </li>
+        <button type="button" onclick="window.prompt('Tell me anything')"> Need to talk?</button>
+        <br>
+        
+        <li> <code><var> window.scrollTo() </var></code> - scrolls to a specific coordinate on the screen </li>
+        <button type="button" onclick="window.scrollTo(0,0)"> Scroll to the top</button>
+        <br>
+        <p> For a full list of methods, click <a href = "https://www.w3schools.com/jsref/obj_window.asp"> here </a> </p>
+      </ul>
+      <h2> Document </h2>
+      <p> The document object is apart of the window object but again can be ommited when calling methods for the document and refers to the actual content that is on the webpage itslef. the document object is very useful for being able to refer to particular elements and change the formatting of them </p>
+      <p>There is a whole list of different methods, the most important ones for finding elements shown below:</p>
+     <h3> finding elements </h3>
+      <ol>
+        <li> <code> <var> document.getElementById(id)</var></code> - finds the element with the matching id. </li>
+        <br>
+         <li> <code> <var> document.getElementByTagName(name)</var></code> - finds elements by tag name. </li>
+        <br>
+         <li> <code> <var> document.getElementByClassName(name)</var></code> - finds elements with matching class name. </li>
+        <br>
+         <li> <code> <var> document.querySelector(Selector </var> </code> - finds the first element on the page with the matching CSS selector (button, img etc) </li>
+      </ol>
+
+      <p> now that we have found the element(s) we are looking for we can now change differrent properties of the element like its height or text.</p>
+      <h3> Changing properties of elements </h2>
+      <table> 
+        
+        <tr>
+          <th> Syntax </th>
+          <th> Result</th>
+        </tr>
+        
+        <tr>
+          <td> <code> <var> element.innerHTML = "text"</var></code </td>
+          <td> Changes the text in the element to the desired new text </td>
+        </tr>
+        
+        <tr>
+          <td> <code> <var> element.attribute = val</var></code </td>
+          <td> Changes the value in the attribute of an element to the new value </td>
+        </tr>
+        
+        <tr>
+          <td> <code> <var> element.style.property = style </var></code </td>
+          <td> Changes the style of an HTML element to a new style </td>
+        </tr>
+        
+        <tr>
+          <td> <code> <var> element.setAttribute(attribute,value) = "text"</var></code </td>
+          <td> Change the attribute value of an HTML element </td>
+        </tr>
+      </table>
+      <h2> Events </h2>
+      <p> Events are an important feature of writing javascript code that is going to be interacting with the webpages </p>
+      <h3> event handlers/listeners</h3>
+      <p>  The best way to create event listeners is via the <code> addEventListener(<var>event-type, listener</var>) </code> </p>
+      <br> <br>
+      <p><code><var>event-type</var></code> : this must be a string of the corresponding event you want to be the trigger for the <code><var>Listener</var></code> to respond to like <code><var>“click”</var></code> or  <code><var>“hover”</var></code>.</p>
+      <br> <br>
+      <p> <code><var>Listener</var></code>: An object which must respond to the event. This can either be a function which will simply be run or an object with the  <code><var>handleEvent()</var></code> method that will be run. </p>
+    </div>
+    <div class = "image">
+      <img src = "addEventListners.png" alt = "code for addEvenetListeners()">
+    </div>
+    <div class = "text">
+      <br>
+      <p> The code above is an example of how you could code the first button on this webpage. This way of coding the button is ideal as the <code><var>addEventListener</var></code> method allows you to have multiple event handlers for one event on a single element. The method has an obvious purpose and is easiest to maintain than the other methods of creating event listeners.</p>
+      <br> <br>
+      <p> Furthermore, this method allows you to simplify the process of having the same event handler to many different objects since, as previously discussed in this article, you can access multiple elements on a web page by class name or type and then ,using a loop, assign each element the same event handler easily.
+ </p>
+
+      <p> another way you can create event handlers is via inline event handlers. To demonstrate their capabilities I have used them to create some of the buttons on this webpage excluding any which refer to height/width.</p>
+    </div>
+    <div class = "image">
+      <img src = "inlineEventListeners.png" alt = "see source code of buttons">
+      <p> Note that here I have directly mixed HTML and javascript which is awful for maintaining the code. I could have made functions which did the neccessary code and called those in the HTML instead of writing the entire function but this is also a bad idea.</p>
+    </div>
+    <div class = "text">  
+      <br> <br>
+      <p> Inline handlers I would strongly not recommend for larger projects as they are deemed bad practice. A good habit of website building is keeping HTML, CSS and Javascript separate from one another. Inline event handlers are created in the HTML and were the first way websites could implement event handlers. For the purpose of this article, it is likely that inline event handlers won’t cause any problems as this article will not need much maintaining in the future and I am only using 5 buttons with this method but if I was to scale this webpage and have let's say a 100 buttons, it would quickly become a nightmare having to maintain 100 different buttons that refer to 100 or so functions located in a different file. We also lose out on all the benefits of <code><var> addEventListener</var></code> since we cannot iterate over a series of elements to apply the same event handler to all of them at once nor can we give multiple event handlers to one event on one element.</p>
+      <p> To finish off event listeners, the third and final way you can create them is via event properties. For example, buttons have the event property <code> <var> on </var></code> followed by the event which you can assign an event handler. This is effectively the same as <code><var> addEventListener</var></code> but you cannot have multiple event handlers for one event.</p>
+    </div>
+    <div class = "image">
+      <img src = "eventProperties.png" alt = "using onclick property to overwrite evetn handler">
+      <p> This feature could be useful if you do want to overwrite event handlers however, the same result can be achieved using <code><var> removeEventListener</var></code> and <code><var> addEventListener</var></code>.</p>
+    </div>
+    <br>
+    <p id = "outro"> This covers all there is about writing event listeners and accessing and changing different elements of a webapge using the global objects <code><var> document</var></code> and <code><var> window</var></code>. I hope this helps clear up the semantics regarding events and event listeners.</p>
+    <br> <br>
+    <p class = "author"> - Rhys Bonwick 03/08/23</p>
+    <div id = "home">
+         <a href = "https://ecs-home.netlify.app/"> Return Home</a>  
+    </div>  
+  </div>  
+</body>
+  
