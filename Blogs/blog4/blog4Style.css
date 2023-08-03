@@ -1,0 +1,121 @@
+html {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  background-color: #301E67 ;
+  color: #FFFFFF ;
+  font-size: 2vh ;
+}
+
+
+#header {
+  position: absolute ;
+  top : 0 ;
+  height:10vw ;
+  width: 85%;
+  font: arial ;
+  left: 7.5% ;
+  font-size: 4vw ;
+}
+
+#article {
+  position: absolute ;
+  background-color: #394867 ;
+  top : 12vw;
+  height: auto ;
+  width: 85% ;
+  font-family: 'Times New Roman', Times, serif ;
+  border: 5px solid #FFFFFF ;
+  left: 7.5% ;
+  display:block ;
+  
+}
+.image{
+  border: 1px solid #FFFFFF ;
+  text-align: center ;
+  height: auto ;
+  width: auto ;
+}
+
+.text{
+  margin-left: 20px ;
+  display:inline;
+}
+
+h1{
+  font-size: 3vh ;
+  text-decoration: underline ;
+  text-align: center ;
+}
+h2{
+  font-size: 3vh ;
+  text-decoration: underline ;
+}
+h3{
+  font-size: 2.5vh ;
+  text-decoration: underline ;
+}
+h4{
+  
+  text-decoration: underline ;
+}
+p{
+  display:inline ;
+  
+}
+
+img{
+  outline: 1px solid #FFFFFF ;
+  background-color: #212A3E ;
+  width: 70% ;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  height: auto ;
+  overflow: auto ;
+  float: center ;
+  
+}
+table{
+  display: block ;
+  right: 50% ;
+  
+  height: auto ;
+  width: 75% ;
+  padding: 8px ;
+  border-collapse: collapse ;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+td{
+  background-color: #606060 ;
+  border: 1px solid #FFFFFF ;
+}
+th {
+  border: 1px solid #FFFFFF ;
+  background-color: #5555CC ;
+}
+
+button {
+  border-color: 1px solid #FFFFFF ;
+}
+code{
+  font-size: 2vh ;
+  display: inline ;
+}
+a {
+  color: #FFFFFF ;
+}
+
+
+.author {
+  display:block ;
+  text-align: right;
+}
+#home {
+  text-align: center ;
+  font-size: 2vh ;
+}
