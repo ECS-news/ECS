@@ -72,12 +72,12 @@ p{
   
 }
 ul{
-	font-size: 2vh;
-	color: #FFFFFF;
+   font-size: 2vh;
+   color: #FFFFFF;
 }
 ol{
-	font-size: 2vh;
-	color: #FFFFFF;
+   font-size: 2vh;
+   color: #FFFFFF;
 }
 a{
   color: #FFFFFF ;
@@ -98,5 +98,10 @@ img{
 
 .author {
   text-align: right;
+  font-size: 2vh ;
+}
+
+#home {
+  text-align: center ;
   font-size: 2vh ;
 }
